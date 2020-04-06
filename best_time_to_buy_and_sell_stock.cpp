@@ -33,6 +33,4 @@ int maxProfit(int* p, int n){
             sum +=(p[i]-p[i-1]);
     
     return sum;
-
-
 }
