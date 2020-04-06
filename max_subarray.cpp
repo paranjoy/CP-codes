@@ -11,7 +11,7 @@ Follow up:
 If you have figured out the O(n) solution, try coding another solution using the divide and conquer approach, which is more subtle.
 */
 //code snippet
-
+ 
 
 int maxSubArray(int* nums, int numsSize){
     int curr_max = nums[0];
