@@ -23,7 +23,7 @@ int getsum(int n){
     }
     return sum;
 }
-
+ 
 bool isHappy(int n){
     int sq = getsum(n);
     if(sq==1)
