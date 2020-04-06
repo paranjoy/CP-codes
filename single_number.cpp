@@ -14,7 +14,7 @@ Example 2:
 Input: [4,1,2,1,2]
 Output: 4
 */
-//code snippet
+//code snippet 
 int singleNumber(int* nums, int numsSize){
     int op=nums[0];
     for(int i =1;i<numsSize;i++){
