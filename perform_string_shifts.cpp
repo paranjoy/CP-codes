@@ -56,40 +56,17 @@ public:
         for(int i = 0; i < shift.size(); i++){
             
             if(shift[i][0] == 0)
-                s1 -= shift[i][1];
-            else
                 s1 += shift[i][1];
+            else
+                s1 -= shift[i][1];
             
         }
         
         //cout<<s1<<endl;
+        s1 = s1 + s.size()*abs(s1);
+        s1 = s1 % (s.size());
         
-        if(s1 < 0){
-            s1 = s1 * -1;
-            
-            s1 = s1 % s.size();
-            
-            string str1 = s.substr(0, s1);
-            string str2 = s.substr(s1, s.size() - s1);
-            
-            str1 = str2 + str1;
-            
-            return str1;
-        }
-        else if(s1 > 0){
-            
-            s1 = s1 % s.size();
-            
-            string str1 = s.substr(s.size() - s1 , s1);
-            string str2 = s.substr(0, s.size() - s1);
-            
-            str1 = str1 + str2;
-            
-            return str1;      
-        }
-        else
-            return s;    
-        
+        s = s + s;
+        return s.substr(s1, (s.size()/2));           
     }
 };
-
