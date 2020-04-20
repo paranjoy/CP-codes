@@ -38,7 +38,8 @@ public:
         
         
         /* iterate through the 2d array, while encountering a '1' increment count and also the same time make all the 
-        adjacent '1's as '0's recursively(do the same thing repeatedly). This means that once we encounter a piece of land,         we make the whole island as water( but not the other disjoint island). In this way we count the no of island. 
+        adjacent '1's as '0's recursively(do the same thing repeatedly). This means that once we encounter a piece of land,     
+        we make the whole island as water( but not the other disjoint island). In this way we count the no of island. 
         */
         
         for(int i = 0; i < r; i++)
