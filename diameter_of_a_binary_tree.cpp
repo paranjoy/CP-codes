@@ -29,38 +29,28 @@ Note: The length of path between two nodes is represented by the number of edges
  */
 class Solution {
 public:
-    int max_dia = -1;
-    
-    int Height(TreeNode *p){
-        if(p==NULL)
-            return 0;
-        
-        int x = Height(p->left);
-        int y = Height(p->right);
-        
-        return x >= y ? x+1 : y+1;
-    }
-    
-    void preorder_traversal(TreeNode *p){
-        if(p){
-            int ht_r = Height(p->right);
-            int ht_l = Height(p->left);
-            
-            max_dia = max_dia >= (ht_l + ht_r) ? max_dia : (ht_l + ht_r);
-            
-            preorder_traversal(p->left);
-            preorder_traversal(p->right);
-        }
-    }
-    
     int diameterOfBinaryTree(TreeNode* root) {
         
-        if(root==NULL)
+        if(root == NULL)
             return 0;
-        else
-            preorder_traversal(root);
+        
+        int res = INT_MIN;
+        
+        height(root, res);
+        
+        return res - 1;
+    }
+private:
+    int height(TreeNode* root, int& res){
+        if(root == NULL)
+            return 0;
+        
+        int l_h = height(root->left, res);
+        int r_h = height(root->right, res);
+        
+        res = max(res, l_h + r_h + 1);
         
         
-        return max_dia;        
+        return 1 + max(l_h, r_h);
     }
 };
