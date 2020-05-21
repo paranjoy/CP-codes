@@ -47,18 +47,16 @@ class Solution {
 public:
     int countSquares(vector<vector<int>>& matrix) {
         
-        for(int  i = 0; i < matrix.size(); i++)
-            for(int j = 0; j < matrix[0].size(); j++){
-                if(j != 0 && i != 0 && matrix[i][j] == 1){
-                    matrix[i][j] = 1 + min(matrix[i][j-1], min(matrix[i-1][j-1], matrix[i-1][j]));
-                }
-            }
         int ans = 0;
         
-        for(int i = 0; i < matrix.size(); i++)
-            for(int  j = 0; j < matrix[0].size(); j++)
+        for(int  i = 0; i < matrix.size(); i++)
+            for(int j = 0; j < matrix[0].size(); j++){
+                if(j != 0 && i != 0 && matrix[i][j] == 1)
+                    matrix[i][j] = 1 + min(matrix[i][j-1], min(matrix[i-1][j-1], matrix[i-1][j]));
+                
                 ans += matrix[i][j];
-        
+            }
+       
         return ans;
     }
 };
