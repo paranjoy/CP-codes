@@ -50,7 +50,6 @@ public:
             else
                 c_2++;
         
-        
         i = 0;
         
         while(c_0--)
